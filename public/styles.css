@@ -1,0 +1,141 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --text: #243447;
+  --muted: #5f7183;
+  --accent: #3867d6;
+  --accent-soft: #e8f0ff;
+  --border: #dfe7f2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.hero {
+  padding: 4rem 1.5rem 3rem;
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: white;
+}
+
+.hero__content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.section__header {
+  margin-bottom: 1rem;
+}
+
+.section__header p {
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.1rem;
+  box-shadow: 0 10px 25px rgba(36, 52, 71, 0.05);
+}
+
+.card__meta {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  object-fit: cover;
+  max-height: 220px;
+}
+
+.upload-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.upload-form input {
+  flex: 1;
+  min-width: 240px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.upload-form button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.2rem;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.document-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.document-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.document-item a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}

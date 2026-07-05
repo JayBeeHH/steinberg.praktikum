@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Praktikumsportfolio</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Praktikumsdokumentation</p>
+        <h1>Mein Praktikum in einer digitalen Übersicht</h1>
+        <p>
+          Diese Website sammelt Tagesberichte, Interviews, Begriffe und Dokumente in einer klaren Struktur.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <div class="section__header">
+          <h2>Tagebucheinträge</h2>
+          <p>Neue Einträge werden automatisch aus dem Ordner geladen.</p>
+        </div>
+        <div id="diary-list" class="card-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section__header">
+          <h2>Interviews</h2>
+          <p>Fragen und Antworten werden in klarer Form dargestellt.</p>
+        </div>
+        <div id="interviews-list" class="card-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section__header">
+          <h2>Begriffe</h2>
+          <p>Wichtige Fachbegriffe werden hier kurz erklärt.</p>
+        </div>
+        <div id="glossary-list" class="card-grid"></div>
+      </section>
+
+      <section class="section">
+        <div class="section__header">
+          <h2>Dokumente</h2>
+          <p>PDFs oder PowerPoints können hier hochgeladen werden.</p>
+        </div>
+        <form id="upload-form" class="upload-form">
+          <input type="file" name="file" id="file-input" required />
+          <button type="submit">Hochladen</button>
+        </form>
+        <div id="documents-list" class="document-list"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
