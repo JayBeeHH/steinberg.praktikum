@@ -518,13 +518,18 @@ function App() {
     window.location.hash = `/tour/${nextStep}`;
   };
 
-  const openReader = (collection, entry) => {
+  useEffect(() => {
+    if (!reader) return;
+
     setReadEntries((current) => {
-      if (current[collection].includes(entry.id)) return current;
-      const next = { ...current, [collection]: [...current[collection], entry.id] };
+      if (current[reader.collection].includes(reader.entry.id)) return current;
+      const next = { ...current, [reader.collection]: [...current[reader.collection], reader.entry.id] };
       sessionStorage.setItem('praktikumsportal-read-entries', JSON.stringify(next));
       return next;
     });
+  }, [reader]);
+
+  const openReader = (collection, entry) => {
     setActiveGlossaryTerm(null);
     setReader({ collection, entry });
   };
