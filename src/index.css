@@ -2742,7 +2742,7 @@ body:has(.tour-shell) {
 
   .tour-navigation {
     padding-right: max(0.75rem, env(safe-area-inset-right));
-    padding-bottom: max(0.85rem, env(safe-area-inset-bottom));
+    padding-bottom: max(1.4rem, calc(env(safe-area-inset-bottom) + 1.2rem));
     padding-left: max(0.75rem, env(safe-area-inset-left));
   }
 

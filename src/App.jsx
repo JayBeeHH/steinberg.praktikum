@@ -489,11 +489,13 @@ function App() {
   };
 
   useEffect(() => {
-    const syncRoute = () => {
+    const syncRoute = (closeReader = false) => {
       if (isOverviewRoute(window.location.hash)) {
         setIsOverview(true);
-        setReader(null);
-        setActiveGlossaryTerm(null);
+        if (closeReader) {
+          setReader(null);
+          setActiveGlossaryTerm(null);
+        }
         return;
       }
 
@@ -505,13 +507,16 @@ function App() {
 
       setIsOverview(false);
       setStep(accessibleStep);
-      setReader(null);
-      setActiveGlossaryTerm(null);
+      if (closeReader) {
+        setReader(null);
+        setActiveGlossaryTerm(null);
+      }
     };
 
     syncRoute();
-    window.addEventListener('hashchange', syncRoute);
-    return () => window.removeEventListener('hashchange', syncRoute);
+    const onHashChange = () => syncRoute(true);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
   }, [diaryReadCount, interviewReadCount, quizAnswers, quizQuestions]);
 
   const goToStep = (nextStep) => {
